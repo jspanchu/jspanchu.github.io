@@ -1,0 +1,38 @@
+// ========== Global ========== //
+// Color of the background
+$global-background-color-dark: #010113;
+
+// Color of the text
+$global-font-color-dark: #ffffff;
+$global-font-secondary-color-dark: #ffffff;
+
+// Color of the link
+$global-link-color-dark: #b3ff02;
+
+// Color of the hover link
+$global-link-hover-color-dark: #00e1ff;
+
+// Color of the border
+$global-border-color-dark: #363636 !default;
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;300&display=swap');
+$global-font-family: 'Exo 2', sans-serif;
+// ========== Global ========== //
+
+// ========== Header ========== //
+// Height of the header
+$header-height: 4rem;
+
+// Font family and size of the header title
+$header-title-font-family: $global-font-family;
+$header-title-font-size: 1.5rem;
+
+// Color of the header background
+$header-background-color: #f8f8f8;
+$header-background-color-dark: #14131100;
+// ========== Header ========== //
+
+// ========== Selection ========== //
+// Color of the selected text
+$selection-color-dark: rgba(58, 143, 255, 0.596);
+// ========== Selection ========== //
