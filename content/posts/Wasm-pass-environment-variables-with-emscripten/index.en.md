@@ -7,11 +7,11 @@ description: "Use environment variables in WebAssembly with Emscripten"
 tags: ["WebAssembly", "Emscripten"]
 ---
 
-It is typical for native C code to poke and probe a shell environment with POSIX `getenv` and `setenv`. JavaScript can preload environment variables expected by a WebAssembly module using the Emscripten toolchain.
+It is typical for native C code to poke and probe a shell environment with POSIX `getenv` and `setenv`. How would an existing C program continue to rely upon environment variables in the browser? I've found that JavaScript can preload environment variables expected by a WebAssembly module using the Emscripten toolchain.
 
 ## Native code
 
-This example queries the environment for a way to greet. Don't try to think about reasons for doing it this way; the point is to demonstrate how JS can preload the environment for WebAssembly ;)
+This example below queries the environment for a way to greet.
 
 ```cpp
 // main.cpp
@@ -66,6 +66,6 @@ This command outputs a `main.wasm` binary and `main.js` source file. The `main.j
 
 The second entry preloads the environment variable `GREETING="HI"`. Here, `runtime` refers to the wasm runtime. `preRun` is a list of functions called one by one by the glue code right before initializing and starting up the wasm runtime. The `ENV` object contains key-value pairs corresponding to a shell environment.
 
-Emscripten docs has additional information on [preRun](https://emscripten.org/docs/api_reference/module.html#Module.preRun).
+You can read additional information on `preRun` in the docs - [preRun](https://emscripten.org/docs/api_reference/module.html#Module.preRun).
 
 That was it! This exact method was used to switch between different rendering backends for the VTK WebAssembly example - [ConeMultiBackend](https://discourse.vtk.org/t/guide-how-do-i-use-vtk-wasm-webgpu-experimental-feature/11164).
